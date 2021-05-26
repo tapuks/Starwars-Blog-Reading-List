@@ -64,6 +64,32 @@ const Card = props => {
 				</div>
 			</div>
 		);
+	} else if (props.selection == "planets") {
+		// Planets
+		return (
+			<div className="card">
+				<img
+					className="card-img-top"
+					src="https://prod-api.theobjective.com/app/uploads/2016/06/Planetas-976x612.jpeg"
+					alt="Card image planets"
+				/>
+				<div className="card-body card-text-center">
+					<h5 className="card-title">{result.name}</h5>
+					<p className="card-text ">
+						<li>Population: {result.population}</li>
+						<li>Terrain: {result.terrain} </li>
+					</p>
+					<div className="d-flex justify-content-between">
+						<a href="#" className="btn btn-outline-primary">
+							Learn more!
+						</a>
+						<a href="#" className="btn btn-outline-warning">
+							<i className="fas fa-heart" />
+						</a>
+					</div>
+				</div>
+			</div>
+		);
 	}
 };
 
