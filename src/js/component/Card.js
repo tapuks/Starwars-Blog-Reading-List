@@ -10,34 +10,61 @@ const Card = props => {
 		.then(json => setResult(json.result.properties))
 		.catch(error => console.log(error));
 
-	return (
-         
-		<div className="card">
-			<img
-				className="card-img-top"
-				src="https://c4.staticflickr.com/8/7481/27348202211_641e6dafe6.jpg"
-				alt="Card image cap"
-			/>
-          {props.selection = "people" ?  
-			<div className="card-body card-text-center">
-				<h5 className="card-title">{result.name}</h5> 
-				<p className="card-text ">
-					<li>Gender: {result.gender}</li>
-					<li>Hair-Color: {result.hair_color} </li>
-					<li>Eye-Color: {result.eye_color}</li>
-				</p>
-            :22} 
-				<div className="d-flex justify-content-between">
-					<a href="#" className="btn btn-outline-primary">
-						Learn more!
-					</a>
-					<a href="#" className="btn btn-outline-warning">
-						<i className="fas fa-heart" />
-					</a>
+	if (props.selection == "people") {
+		// Character
+		return (
+			<div className="card">
+				<img
+					className="card-img-top"
+					src="https://c4.staticflickr.com/8/7481/27348202211_641e6dafe6.jpg"
+					alt="Card image cap"
+				/>
+				<div className="card-body card-text-center">
+					<h5 className="card-title">{result.name}</h5>
+					<p className="card-text ">
+						<li>Gender: {result.gender}</li>
+						<li>Hair-Color: {result.hair_color} </li>
+						<li>Eye-Color: {result.eye_color}</li>
+					</p>
+					<div className="d-flex justify-content-between">
+						<a href="#" className="btn btn-outline-primary">
+							Learn more!
+						</a>
+						<a href="#" className="btn btn-outline-warning">
+							<i className="fas fa-heart" />
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	} else if (props.selection == "vehicles") {
+		// Vehicles
+		return (
+			<div className="card">
+				<img
+					className="card-img-top"
+					src="https://db-api.elestimulo.com/app/uploads/2019/10/1266066.png"
+					alt="Card image vehicle"
+				/>
+				<div className="card-body card-text-center">
+					<h5 className="card-title">{result.name}</h5>
+					<p className="card-text ">
+						<li>Model: {result.model}</li>
+						<li>passengers: {result.passengers} </li>
+						<li>vehicle_class: {result.vehicle_class}</li>
+					</p>
+					<div className="d-flex justify-content-between">
+						<a href="#" className="btn btn-outline-primary">
+							Learn more!
+						</a>
+						<a href="#" className="btn btn-outline-warning">
+							<i className="fas fa-heart" />
+						</a>
+					</div>
+				</div>
+			</div>
+		);
+	}
 };
 
 Card.propTypes = {
