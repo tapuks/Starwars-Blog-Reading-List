@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	return (
@@ -11,9 +12,7 @@ export const Navbar = () => {
 				/>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Favorites</button>
-				</Link>
+				<button className="btn btn-primary">Favorites</button>
 			</div>
 		</nav>
 	);

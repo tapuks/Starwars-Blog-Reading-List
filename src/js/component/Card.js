@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 const Card = props => {
 	const [result, setResult] = useState([]);
@@ -30,7 +31,12 @@ const Card = props => {
 						<a href="#" className="btn btn-outline-primary">
 							Learn more!
 						</a>
-						<a href="#" className="btn btn-outline-warning">
+						<a
+							href="#"
+							className="btn btn-outline-warning"
+							onClick={() => {
+								actions.addFavorite(props.name);
+							}}>
 							<i className="fas fa-heart" />
 						</a>
 					</div>
