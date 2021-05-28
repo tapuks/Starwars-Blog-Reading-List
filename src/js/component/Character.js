@@ -10,12 +10,12 @@ const Character = () => {
 			<div className="col-3">
 				<Card selection="people" id={2} />
 			</div>
-			<div className="col-3">
+			{/* <div className="col-3">
 				<Card selection="people" id={3} />
 			</div>
 			<div className="col-3">
 				<Card selection="people" id={4} />
-			</div>
+			</div> */}
 		</div>
 	);
 };

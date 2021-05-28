@@ -1,24 +1,29 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+		// se declaran las variables en Store
 		store: {
 			people: [],
 			plantets: [],
-			favorite: []
+			favorite: [],
+			numbers: 2,
+			apellidfos: { david: berdiell }
 		},
+
 		actions: {
 			// Use getActions to call a function within a fuction
 
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				console.log("hola");
+				// fetch().then().then(data => setStore({ "foo": data.bar }))
 			},
 			addFavorite: item => {
 				const store = getStore();
 				const validate = store.favorite.includes(item);
+
 				if (store.favorite == [] || !validate) {
 					setStore({ favorite: [...store.favorite, item] });
 				}
+				// Para llamar otra funcion de actions: getActions().loadSomeData()
 			},
 
 			changeColor: (index, color) => {

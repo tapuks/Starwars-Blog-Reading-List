@@ -10,12 +10,12 @@ const Planet = () => {
 			<div className="col-3">
 				<Card selection="planets" id={1} />
 			</div>
-			<div className="col-3">
+			{/* <div className="col-3">
 				<Card selection="planets" id={1} />
 			</div>
 			<div className="col-3">
 				<Card selection="planets" id={1} />
-			</div>
+			</div> */}
 		</div>
 	);
 };

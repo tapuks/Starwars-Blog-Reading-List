@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 const Card = props => {
+	const { store, actions } = useContext(Context);
 	const [result, setResult] = useState([]);
 	const url = "https://www.swapi.tech/api/" + props.selection + "/" + props.id.toString();
 
@@ -35,7 +36,7 @@ const Card = props => {
 							href="#"
 							className="btn btn-outline-warning"
 							onClick={() => {
-								actions.addFavorite(props.name);
+								actions.addFavorite("result.name");
 							}}>
 							<i className="fas fa-heart" />
 						</a>
@@ -63,7 +64,12 @@ const Card = props => {
 						<a href="#" className="btn btn-outline-primary">
 							Learn more!
 						</a>
-						<a href="#" className="btn btn-outline-warning">
+						<a
+							href="#"
+							className="btn btn-outline-warning"
+							onClick={() => {
+								actions.addFavorite("result.name");
+							}}>
 							<i className="fas fa-heart" />
 						</a>
 					</div>
@@ -89,7 +95,12 @@ const Card = props => {
 						<a href="#" className="btn btn-outline-primary">
 							Learn more!
 						</a>
-						<a href="#" className="btn btn-outline-warning">
+						<a
+							href="#"
+							className="btn btn-outline-warning"
+							onClick={() => {
+								actions.addFavorite("result.name");
+							}}>
 							<i className="fas fa-heart" />
 						</a>
 					</div>
