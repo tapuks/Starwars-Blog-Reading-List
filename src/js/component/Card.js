@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const Card = props => {
 	const { store, actions } = useContext(Context);
@@ -30,13 +31,14 @@ const Card = props => {
 					</p>
 					<div className="d-flex justify-content-between">
 						<a href="#" className="btn btn-outline-primary">
+							{/* onClick={() => history.push("/" + props.section + "/" + props.id)}> */}
 							Learn more!
 						</a>
 						<a
 							href="#"
 							className="btn btn-outline-warning"
 							onClick={() => {
-								actions.addFavorite("result.name");
+								actions.addFavorite(result.name);
 							}}>
 							<i className="fas fa-heart" />
 						</a>
@@ -68,7 +70,7 @@ const Card = props => {
 							href="#"
 							className="btn btn-outline-warning"
 							onClick={() => {
-								actions.addFavorite("result.name");
+								actions.addFavorite(result.name);
 							}}>
 							<i className="fas fa-heart" />
 						</a>
@@ -92,14 +94,16 @@ const Card = props => {
 						<li>Terrain: {result.terrain} </li>
 					</p>
 					<div className="d-flex justify-content-between">
-						<a href="#" className="btn btn-outline-primary">
+						<a
+							// onClick={() => props.history.push("/Info")}
+							className="btn btn-outline-primary">
 							Learn more!
 						</a>
 						<a
 							href="#"
 							className="btn btn-outline-warning"
 							onClick={() => {
-								actions.addFavorite("result.name");
+								actions.addFavorite(result.name);
 							}}>
 							<i className="fas fa-heart" />
 						</a>

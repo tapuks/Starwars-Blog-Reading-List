@@ -10,12 +10,12 @@ const Vehicle = () => {
 			<div className="col-3">
 				<Card selection="vehicles" id={7} />
 			</div>
-			{/* <div className="col-3">
+			<div className="col-3">
 				<Card selection="vehicles" id={6} />
 			</div>
 			<div className="col-3">
 				<Card selection="vehicles" id={8} />
-			</div> */}
+			</div>
 		</div>
 	);
 };

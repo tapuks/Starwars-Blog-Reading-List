@@ -4,9 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			plantets: [],
-			favorite: [],
-			numbers: 2,
-			apellidfos: { david: berdiell }
+			favorite: []
 		},
 
 		actions: {
@@ -24,6 +22,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ favorite: [...store.favorite, item] });
 				}
 				// Para llamar otra funcion de actions: getActions().loadSomeData()
+			},
+
+			deleteFavorite: id => {
+				const store = getStore();
+				const updatedList = [...store.favorite];
+				updatedList.splice(id, 1);
+				setStore({ favorite: [...updatedList] });
 			},
 
 			changeColor: (index, color) => {

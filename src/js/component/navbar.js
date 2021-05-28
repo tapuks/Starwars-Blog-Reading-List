@@ -21,18 +21,20 @@ export const Navbar = () => {
 					{store.favorite.length > 0
 						? store.favorite.map((element, index) => {
 								return (
-									<Dropdown.Item href="#" key={index}>
+									<Dropdown.Item key={index}>
 										{element}
+										<i
+											id="delete"
+											className="far fa-trash-alt pointer trash"
+											onClick={() => {
+												actions.deleteFavorite({ index });
+											}}
+										/>
 									</Dropdown.Item>
 								);
 						  })
 						: ""}
 				</Dropdown.Menu>
-				{/* <Dropdown.Menu>
-					<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-					<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				</Dropdown.Menu> */}
 			</Dropdown>
 		</nav>
 	);
