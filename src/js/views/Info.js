@@ -1,9 +1,19 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
-const info = () => {
-	return <div>Hola</div>;
+const Info = () => {
+	const { id } = useParams();
+	const { selection } = useParams();
+
+	console.log(id);
+	return (
+		<div>
+			Holaa {id}
+			<span>{selection}</span>
+		</div>
+	);
 };
 
-export default info;
+export default Info;

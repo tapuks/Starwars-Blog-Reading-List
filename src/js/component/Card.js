@@ -30,10 +30,10 @@ const Card = props => {
 						<li>Eye-Color: {result.eye_color}</li>
 					</p>
 					<div className="d-flex justify-content-between">
-						<a href="#" className="btn btn-outline-primary">
-							{/* onClick={() => history.push("/" + props.section + "/" + props.id)}> */}
-							Learn more!
-						</a>
+						<Link to={"/info/" + props.id + "/" + props.selection}>
+							<a className="btn btn-outline-primary">Learn more!</a>
+						</Link>
+
 						<a
 							href="#"
 							className="btn btn-outline-warning"
@@ -63,9 +63,9 @@ const Card = props => {
 						<li>vehicle_class: {result.vehicle_class}</li>
 					</p>
 					<div className="d-flex justify-content-between">
-						<a href="#" className="btn btn-outline-primary">
-							Learn more!
-						</a>
+						<Link to={"/info/" + props.id + "/" + props.selection}>
+							<a className="btn btn-outline-primary">Learn more!</a>
+						</Link>
 						<a
 							href="#"
 							className="btn btn-outline-warning"
@@ -94,11 +94,9 @@ const Card = props => {
 						<li>Terrain: {result.terrain} </li>
 					</p>
 					<div className="d-flex justify-content-between">
-						<a
-							// onClick={() => props.history.push("/Info")}
-							className="btn btn-outline-primary">
-							Learn more!
-						</a>
+						<Link to={"/info/" + props.id + "/" + props.selection}>
+							<a className="btn btn-outline-primary">Learn more!</a>
+						</Link>
 						<a
 							href="#"
 							className="btn btn-outline-warning"
