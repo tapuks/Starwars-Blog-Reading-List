@@ -5,13 +5,19 @@ const Login = () => {
 	const [email, SetEmail] = useState("");
 	const [password, SetPassword] = useState("");
 	function login() {
-		fetch("https://3000-plum-orangutan-lz3vuuco.ws-eu09.gitpod.io/login", {
+		fetch("https://3000-blue-peacock-7qhq2n0k.ws-eu09.gitpod.io/login", {
 			method: "POST",
+			// le decimos que mande un json
+			headers: {
+				"Content-Type": "application/json"
+			},
 			body: JSON.stringify({
 				email: email,
 				password: password
 			})
-		}).then();
+		})
+			.then(response => response.json())
+			.then(responseJson => {});
 	}
 	return (
 		<div>
@@ -22,8 +28,7 @@ const Login = () => {
 						type="email"
 						className="form-control"
 						placeholder="Enter email"
-						value={email}
-						onChange={e => SetEmail(e.target.value)}
+						onChange={event => SetEmail(event.target.value)}
 					/>
 					{console.log(email)}
 				</div>
@@ -34,12 +39,11 @@ const Login = () => {
 						className="form-control"
 						id="inputPassword2"
 						placeholder="Password"
-						value={password}
-						onChange={e => SetPassword(e.target.value)}
+						onChange={event => SetPassword(event.target.value)}
 					/>
 				</div>
 
-				<button type="submit" className="btn btn-primary mb-4" onClick={SendFormulary}>
+				<button type="submit" className="btn btn-primary mb-4" onClick={login}>
 					Confirm identity
 				</button>
 			</form>
