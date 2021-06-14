@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Login = () => {
+	const { actions } = useContext(Context);
 	const [email, SetEmail] = useState("");
 	const [password, SetPassword] = useState("");
 	function login() {
@@ -17,7 +19,10 @@ const Login = () => {
 			})
 		})
 			.then(response => response.json())
-			.then(responseJson => {});
+			.then(responseJson => {
+				console.log(responseJson);
+				actions.setToken(responseJson.token);
+			});
 	}
 	return (
 		<div>

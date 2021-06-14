@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			plantets: [],
-			favorite: []
+			favorite: [],
+			token: ""
 		},
 
 		actions: {
@@ -29,6 +30,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const updatedList = [...store.favorite];
 				updatedList.splice(id, 1);
 				setStore({ favorite: [...updatedList] });
+			},
+
+			setToken: token => {
+				setStore({ token: token });
+			},
+
+			getToken: () => {
+				const store = getStore();
+				return store.token;
 			},
 
 			changeColor: (index, color) => {
