@@ -7,7 +7,7 @@ const Login = () => {
 	const [email, SetEmail] = useState("");
 	const [password, SetPassword] = useState("");
 	function login() {
-		fetch("https://3000-blue-peacock-7qhq2n0k.ws-eu09.gitpod.io/login", {
+		fetch("https://3000-amethyst-lobster-7nkmi3pw.ws-eu09.gitpod.io/login", {
 			method: "POST",
 			// le decimos que mande un json
 			headers: {
@@ -48,7 +48,13 @@ const Login = () => {
 					/>
 				</div>
 
-				<button type="submit" className="btn btn-primary mb-4" onClick={login}>
+				<button
+					type="submit"
+					className="btn btn-primary mb-4"
+					onClick={event => {
+						event.preventDefault();
+						login();
+					}}>
 					Confirm identity
 				</button>
 			</form>
