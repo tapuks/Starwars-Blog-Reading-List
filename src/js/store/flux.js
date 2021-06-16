@@ -10,7 +10,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			// Use getActions to call a function within a fuction
-
+			removeToken: () => {
+				setStore({ token: null });
+				localStorage.removeItem("token");
+			},
 			loadSomeData: () => {
 				console.log("hola");
 				// fetch().then().then(data => setStore({ "foo": data.bar }))
@@ -33,12 +36,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setToken: token => {
+				localStorage.setItem("token", token);
 				setStore({ token: token });
 			},
 
 			getToken: () => {
 				const store = getStore();
-				return store.token;
+				if (store.token) {
+					return store.token;
+				} else {
+					return localStorage.getItem("token");
+				}
 			},
 
 			changeColor: (index, color) => {
