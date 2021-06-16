@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Login = () => {
+	const history = useHistory();
 	const { actions } = useContext(Context);
 	const [email, SetEmail] = useState("");
 	const [password, SetPassword] = useState("");
 	function login() {
-		fetch("https://3000-amethyst-lobster-7nkmi3pw.ws-eu09.gitpod.io/login", {
+		fetch("https://3000-purple-wombat-t7g3e0ij.ws-eu08.gitpod.io/login", {
 			method: "POST",
 			// le decimos que mande un json
 			headers: {
@@ -21,7 +22,9 @@ const Login = () => {
 			.then(response => response.json())
 			.then(responseJson => {
 				console.log(responseJson);
+				//Cuando llegue aqui te redirige a esa ruta
 				actions.setToken(responseJson.token);
+				history.push("/profile");
 			});
 	}
 	return (

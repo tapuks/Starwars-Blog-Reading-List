@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const Login = () => {
+const Profile = () => {
 	const [user, setUser] = useState(null);
-    const { actions } = useContext(Context);
-    
+	const { actions } = useContext(Context);
+
 	useEffect(() => {
-        const token = actions.getToken();
-		fetch("https://3000-blue-peacock-7qhq2n0k.ws-eu09.gitpod.io/login", {
-			method: "GET",
+		const token = actions.getToken();
+		fetch("https://3000-purple-wombat-t7g3e0ij.ws-eu08.gitpod.io/login", {
+			method: "POST",
 			// le decimos que mande un json
 			headers: {
 				"Content-Type": "application/json"
@@ -23,12 +23,13 @@ const Login = () => {
 				setUser(responseJson);
 			});
 	}, []);
+
 	return (
 		<div className="jumbotron">
-            <h1>Profile</h1>
-            <span>{user.email}</span>
-        </div>	
-    )
+			<h1>Profile</h1>
+			{user ? <span>{user.email}</span> : "Loading..."}
+		</div>
+	);
 };
 
-export default Login;
+export default Profile;
