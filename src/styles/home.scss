@@ -5,3 +5,11 @@
 p li {
     list-style: none;
 }
+.card{
+    width: max-content;
+}
+.card-container{
+    overflow-y: scroll; 
+    height: auto;
+    display: flex;
+}

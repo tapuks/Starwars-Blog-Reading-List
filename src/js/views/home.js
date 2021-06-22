@@ -12,7 +12,7 @@ export const Home = () => {
 	return (
 		<div className="mt-5 container-fluid">
 			<h1 className="text-danger">Characters</h1>
-			<div className="row">
+			<div className="card-container">
 				{store.people.map((character, index) => {
 					return (
 						<Card
@@ -32,7 +32,7 @@ export const Home = () => {
 			</div>
 
 			<h1 className="mt-5 text-danger">Planets</h1>
-			<div className="row">
+			<div className="card-container">
 				{store.planets.map((planets, index) => {
 					return (
 						<Card
