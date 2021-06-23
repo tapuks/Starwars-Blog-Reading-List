@@ -7,9 +7,13 @@ p li {
 }
 .card{
     width: max-content;
+    min-width: 400px;
+    height: 800px;
 }
 .card-container{
     overflow-y: scroll; 
     height: auto;
     display: flex;
 }
+
+
