@@ -5,13 +5,22 @@ import { Context } from "../store/appContext";
 
 const Info = () => {
 	const { id } = useParams();
-	const { selection } = useParams();
+	const { section } = useParams();
+	const { store, actions } = useContext(Context);
 
 	console.log(id);
 	return (
-		<div>
+		<div className="row">
+			<div className="col-6">
+				<img
+					className="card-img-top"
+					src="https://c4.staticflickr.com/8/7481/27348202211_641e6dafe6.jpg"
+					alt="Card image cap"
+				/>
+			</div>
+			<div className="col-6" />
 			Holaa {id}
-			<span>{selection}</span>
+			<span>{section}</span>
 		</div>
 	);
 };

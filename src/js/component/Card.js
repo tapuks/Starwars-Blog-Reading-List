@@ -28,7 +28,7 @@ const Card = props => {
 					</li>
 				</p>
 				<div className="d-flex justify-content-between">
-					<Link to={"/" + props.section + "/" + props.id} className="btn btn-outline-primary">
+					<Link to={"/info" + "/" + props.section + "/" + props.id} className="btn btn-outline-primary">
 						Learn more!
 					</Link>
 

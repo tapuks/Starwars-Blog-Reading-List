@@ -22,8 +22,8 @@ const Login = () => {
 			.then(response => response.json())
 			.then(responseJson => {
 				console.log(responseJson);
-				//Cuando llegue aqui te redirige a esa ruta
 				actions.setToken(responseJson.token);
+				//Cuando llegue aqui te redirige a esa ruta
 				history.push("/profile");
 			});
 	}
