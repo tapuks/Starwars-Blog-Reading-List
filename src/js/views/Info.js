@@ -105,6 +105,33 @@ const Info = () => {
 				</div>
 
 				<hr className="horizontal-line" />
+
+				<div className="row justify-content-around description">
+					<div className="">
+						<li>Name</li>
+						<li>{Info.name}</li>
+					</div>
+					<div className="">
+						<li>Climate</li>
+						<li>{Info.climate}</li>
+					</div>
+					<div className="">
+						<li>Population</li>
+						<li>{Info.population}</li>
+					</div>
+					<div className="">
+						<li>Orbital Period</li>
+						<li>{Info.orbital_Period}</li>
+					</div>
+					<div className="">
+						<li>Rotation Period</li>
+						<li>{Info.rotation_period}</li>
+					</div>
+					<div className="">
+						<li>Diameter</li>
+						<li>{Info.diameter}</li>
+					</div>
+				</div>
 			</div>
 		);
 	}
